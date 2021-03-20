@@ -1,13 +1,17 @@
 xlwg
 
+C++ Library.
+
+#NAME:
 X-Letter Word generator
 
-Copyright The Eichen Group (TM) (c) 2021.
+#AUTHOR:
+The Eichen Group (TM) (c) 2021.
 
-Description:
+#DESCRIPTION:
 A library to create objects that generate random x-letter words, where 'x' is a positive integer <=1.
 
-Member Methods:
+#MEMBER METHODS:
   *Generator(int x) =>  Creates an object that can generate words of x letters.
   *generateWord()   =>  Generates a random x-letter word.
   *verifyWord()     =>  Verifies whether the generated word exists. Flags the generated word as an existent word.
