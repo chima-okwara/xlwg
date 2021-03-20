@@ -8,4 +8,4 @@ FILE(GLOB_RECURSE srcFiles ${homeDir}/*.cpp)
 
 add_library (STATIC xlwg ${srcFiles})
 
-target_include_directories(${xlwgHomeDir} PUBLIC include)
+# target_include_directories(${xlwgHomeDir} PUBLIC include)
