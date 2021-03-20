@@ -9,7 +9,7 @@ X-Letter Word generator
 The Eichen Group (TM) (c) 2021.
 
 #DESCRIPTION:
-A library to create objects that generate random x-letter words, where 'x' is a positive integer <=1.
+A library to create objects that generate random x-letter words, where 'x' is a positive integer <= 1.
 
 #MEMBER METHODS:
   *Generator(int x) =>  Creates an object that can generate words of x letters.
