@@ -2,6 +2,11 @@ xlwg
 
 C++ Library.
 
+***DISCLAIMER!!!***
+This library is still in the early testing stages. All code and bug report contributions are welcome until otherwise announced.
+***
+
+
 #***NAME:***
 X-Letter Word generator.
 ***
