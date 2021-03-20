@@ -3,7 +3,7 @@ xlwg
 C++ Library.
 
 #NAME:
-X-Letter Word generator
+X-Letter Word generator.
 
 #AUTHOR:
 The Eichen Group (TM) (c) 2021.
