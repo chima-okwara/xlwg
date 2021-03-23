@@ -1,0 +1,17 @@
+{
+  "configurations": [
+    {
+      "name": "Debug",
+      "generator": "Unix Makefiles",
+      "configurationType" : "Debug",
+      "buildRoot":  "${projectDir}/build/${name}",
+      "cmakeCommandArgs":  "",
+      "buildCommandArgs": "",
+      "ctestCommandArgs":  "",
+      "variables": [{
+        "name": "TEST_VAR",
+        "value": "ON"
+        }]
+    }
+  ]
+}
