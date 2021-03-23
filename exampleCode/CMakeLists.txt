@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.5)
 
-project (3lwg)
+project (xlwgLib)
 
 add_executable(example main.cpp)
 
-target_link_libraries(3lwg PUBLIC  xlwgLib)
+include_directories(../)
+
+target_link_libraries(${PROJECT_NAME} ./xlwgLib)

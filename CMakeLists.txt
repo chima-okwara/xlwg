@@ -4,10 +4,10 @@ project (xlwgLib)
 
 add_subdirectory(exampleCode)
 
-SET(xlwgHomeDir "${PROJECT_SOURCE_DIR}")
+# SET(xlwgHomeDir "${PROJECT_SOURCE_DIR}")
 
-FILE(GLOB_RECURSE srcFiles ${homeDir}/*.cpp)
+FILE(GLOB_RECURSE srcFiles ./*.cpp)
 
 add_library (${PROJECT_NAME} ${srcFiles})
 
-target_include_directories(${xlwgHomeDir} PUBLIC ./)
+target_include_directories(${PROJECT_NAME} PUBLIC ./)

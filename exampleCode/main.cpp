@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-  Generator gen(3);
+  Generator gen(3);     //Creates an object to generate three-letter words.
   char ans, again;
 
   do
@@ -19,7 +19,7 @@ int main()
     {
       case 'Y':
       {
-        gen.verifyWord(1, 1);
+        gen.verifyWord(1);
         gen.storeWord();
       }
 
