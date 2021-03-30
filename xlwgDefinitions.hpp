@@ -13,18 +13,14 @@
 
 
 //Types:
-    typedef unsigned char uint8_t;
-    typedef unsigned long ulong;
+    using uint8_t = unsigned char;
+    using ulong = unsigned long;
 
 
 //Methods:
 namespace xlwg
 {
-  void delay(const ulong &usec)
-  {
-    time_t end = time(nullptr) + ((long)(usec/1000));
-    while (time(nullptr)<end);
-  }
+  void delay(const ulong &usec);
 }
 
 

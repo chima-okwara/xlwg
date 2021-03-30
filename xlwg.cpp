@@ -1,5 +1,6 @@
 #include <time.h>
 #include <vector>
+#include <stdlib.h>
 #include "xlwgDefinitions.hpp"
 #include "xlwg.hpp"
 
@@ -7,7 +8,7 @@ const char Generator::alphabets[27] = "aeiouybcdfghjklmnpqrstvwxz";
 const char Generator::vowels[7] = {A, E, I, O, U, Y ,'\0'};
 bool wordExists = false;
 
-Generator::Generator(const uint8_t &xLetters=3) :letterCount(xLetters)
+Generator::Generator(const uint8_t &xLetters) :letterCount(xLetters)
 {
 
 }
@@ -64,4 +65,11 @@ void Generator::storeWord()
 void Generator::verifyWord(bool state)
 {
   wordExists = ( (state == true) ? true : false );
+}
+
+
+void xlwg::delay(const ulong &usec)
+{
+    time_t end = time(nullptr) + ((long)(usec/1000));
+    while (time(nullptr)<end);
 }

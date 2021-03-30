@@ -1,6 +1,8 @@
 #ifndef GENERATOR_HPP
 #include <vector>
+#include <stdlib.h>
 #include "xlwgDefinitions.hpp"
+
 #define GENERATOR_HPP
 
 class Generator
@@ -11,6 +13,7 @@ private:
   const static char vowels[7];
   char *word;                     //TODO: Reimplement using a smart pointer or a vector container.
   bool wordExists {false};
+
 
   int correctWordCount;
   std::vector<char*> wordBin;
