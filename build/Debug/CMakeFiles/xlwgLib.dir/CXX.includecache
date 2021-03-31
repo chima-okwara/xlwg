@@ -21,6 +21,8 @@ vector
 -
 stdlib.h
 -
+string.h
+-
 xlwgDefinitions.hpp
 /home/chima/cxxLibs/arduinoLibs/xlwg/xlwgDefinitions.hpp
 xlwg.hpp

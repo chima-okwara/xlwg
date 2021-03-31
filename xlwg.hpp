@@ -8,7 +8,7 @@
 class Generator
 {
 private:
-  const uint8_t letterCount;
+  const int8_t letterCount;
   const static char alphabets[27];
   const static char vowels[7];
   char *word;                     //TODO: Reimplement using a smart pointer or a vector container.
@@ -20,7 +20,7 @@ private:
 
 
   char generateLetter();
-  bool checkVowel(const char *str);
+  bool checkVowel() const;
 
 public:
   Generator(const uint8_t &xLetters);

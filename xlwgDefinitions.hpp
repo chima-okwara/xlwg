@@ -13,6 +13,8 @@
 
 
 //Types:
+    using int8_t = signed char;
+    using uint = unsigned int;
     using uint8_t = unsigned char;
     using ulong = unsigned long;
 
@@ -20,7 +22,8 @@
 //Methods:
 namespace xlwg
 {
-  void delay(const ulong &usec);
+  void delay(const ulong &sec);   //Delay for sec seconds
+  void mdelay(const ulong &msec);  //Delay for msec microseconds
 }
 
 

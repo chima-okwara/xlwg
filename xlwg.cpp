@@ -1,6 +1,7 @@
 #include <time.h>
 #include <vector>
 #include <stdlib.h>
+#include <string.h>
 #include "xlwgDefinitions.hpp"
 #include "xlwg.hpp"
 
@@ -8,34 +9,23 @@ const char Generator::alphabets[27] = "aeiouybcdfghjklmnpqrstvwxz";
 const char Generator::vowels[7] = {A, E, I, O, U, Y ,'\0'};
 bool wordExists = false;
 
-Generator::Generator(const uint8_t &xLetters) :letterCount(xLetters)
+Generator::Generator(const uint8_t &xLetters) :letterCount(xLetters+1)
 {
 
 }
 
-bool Generator::checkVowel(const char *str) //Checks for vowel in word.
+bool Generator::checkVowel() const //Checks for vowel in word, returns false if none.
 {
-  bool status;
-  for (uint8_t i = 0; i<3; ++i)
-  {
-    for (uint8_t j =0; j<7; ++j)
-    {
-      if (str[i] == vowels[j])
-      {
-        status=true;
-        break;
-      }
-    }
-  }
-
+  bool status = (strpbrk(word, vowels) != nullptr) ? (true) : (false);
   return (status);
-}     //TODO: Re-implement using strpbrk(*, *) function.
+}
+
 
 char Generator::generateLetter(void)  //Generates a single letter from the alphabet
 {
-  srand((unsigned int)time(nullptr));
+  srand((uint)time(nullptr));
   uint8_t x = rand()%26;
-
+  xlwg::delay(1);
   return (alphabets[x]);
 }
 
@@ -43,13 +33,15 @@ void Generator::generateWord(void)
 {
   do
   {
-    for (size_t i = 0; i<letterCount; ++i)
+    for (int8_t i = 0; i<(letterCount-1); ++i)
     {
       word[i] = generateLetter();
-      xlwg::delay(200);
+      xlwg::delay(2);
     }
-    word[letterCount] = '\0';
-  } while(!checkVowel(word));
+
+
+    word[letterCount-1] = '\0';
+  } while(!checkVowel());
 }
 
 
@@ -68,8 +60,14 @@ void Generator::verifyWord(bool state)
 }
 
 
-void xlwg::delay(const ulong &usec)
+void xlwg::delay(const ulong &sec)
 {
-    time_t end = time(nullptr) + ((long)(usec/1000));
-    while (time(nullptr)<end);
+    time_t wait = time(nullptr) + sec;
+    while (time(nullptr) < wait);
+}
+
+
+void xlwg::mdelay(const ulong &msec)    //TODO: Implement using a microsecond function from time.h
+{
+
 }
