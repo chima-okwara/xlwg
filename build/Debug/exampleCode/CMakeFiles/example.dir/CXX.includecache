@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/chima/cxxLibs/arduinoLibs/xlwg/exampleCode/main.cpp
+iostream
+-
+../xlwg.hpp
+/home/chima/cxxLibs/arduinoLibs/xlwg/xlwg.hpp
+
+/home/chima/cxxLibs/arduinoLibs/xlwg/xlwg.hpp
+vector
+-
+stdlib.h
+-
+xlwgDefinitions.hpp
+/home/chima/cxxLibs/arduinoLibs/xlwg/xlwgDefinitions.hpp
+
+/home/chima/cxxLibs/arduinoLibs/xlwg/xlwgDefinitions.hpp
+time.h
+-
+

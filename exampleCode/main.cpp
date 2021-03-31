@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-  Generator gen(3);     //Creates an object to generate three-letter words.
+  Generator gen(3);    //Creates an object to generate three-letter words.
   char ans, again;
 
   do

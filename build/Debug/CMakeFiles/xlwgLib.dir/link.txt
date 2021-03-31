@@ -1,0 +1,2 @@
+/usr/bin/ar qc libxlwgLib.a  CMakeFiles/xlwgLib.dir/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o CMakeFiles/xlwgLib.dir/exampleCode/main.cpp.o CMakeFiles/xlwgLib.dir/xlwg.cpp.o
+/usr/bin/ranlib libxlwgLib.a
