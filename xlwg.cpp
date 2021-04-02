@@ -5,44 +5,56 @@
 #include "xlwgDefinitions.hpp"
 #include "xlwg.hpp"
 
-const char Generator::alphabets[27] = "aeiouybcdfghjklmnpqrstvwxz";
+const char *const Generator:: alphabets = "aeiouybcdfghjklmnpqrstvwxz";
 const char Generator::vowels[7] = {A, E, I, O, U, Y ,'\0'};
 bool wordExists = false;
 
-Generator::Generator(const uint8_t &xLetters) :letterCount(xLetters+1)
+Generator::Generator(const uint8_t &xLetters) :letterCount(xLetters)
 {
-
+  char word[letterCount+1] {};
+  (this->word) = word;
 }
 
 bool Generator::checkVowel() const //Checks for vowel in word, returns false if none.
 {
-  bool status = (strpbrk(word, vowels) != nullptr) ? (true) : (false);
+  bool status = (strpbrk(word, vowels) != NULL) ? (true) : (false);
   return (status);
 }
 
+#include <iostream> //TODO: remove
 
-char Generator::generateLetter(void)  //Generates a single letter from the alphabet
+char Generator::*generateLetter(void)  //Generates a single letter from the alphabet
 {
-  srand((uint)time(nullptr));
-  uint8_t x = rand()%26;
+  std::cout << "entering generateLetter()" << '\n';   //TODO: remove
+  auto seed = time(nullptr);
+  srand(seed++);
+  uint8_t x = rand()%26+1;
   xlwg::delay(1);
-  return (alphabets[x]);
+  char letter = getAlphabet(x);
+  std::cout << "leaving generateLetter()" << '\n';    //TODO: remove
+  return (letter);
 }
 
 void Generator::generateWord(void)
 {
+  std::cout << "entering generateWord()" << '\n';   //TODO: remove
   do
   {
+    std::cout << "entering do while() loop" << '\n';    //TODO: remove
     for (int8_t i = 0; i<(letterCount-1); ++i)
     {
-      word[i] = generateLetter();
+      std::cout << "entering for() loop" << '\n';       //TODO: remove
+      word+i = generateLetter();
       xlwg::delay(2);
     }
-
+    std::cout << "leaving for() loop" << '\n';      //TODO: remove
 
     word[letterCount-1] = '\0';
   } while(!checkVowel());
+  std::cout << "leaving do while() loop" << '\n';   //TODO: remove
+  std::cout << "leaving generateWord()" << '\n';    //TODO: remove
 }
+
 
 
 void Generator::storeWord()

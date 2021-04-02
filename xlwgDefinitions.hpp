@@ -17,6 +17,7 @@
     using uint = unsigned int;
     using uint8_t = unsigned char;
     using ulong = unsigned long;
+    using uchar = uint8_t;
 
 
 //Methods:

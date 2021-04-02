@@ -8,6 +8,6 @@ add_subdirectory(exampleCode)
 
 FILE(GLOB_RECURSE srcFiles ./*.cpp)
 
-add_library (${PROJECT_NAME} ${srcFiles})
+add_library (${PROJECT_NAME} STATIC ${srcFiles})
 
 target_include_directories(${PROJECT_NAME} PUBLIC ./)
