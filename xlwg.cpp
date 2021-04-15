@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //*FILE NAME:       xlwg.cpp
 //*FILE DESC:       Source file for xlwg library.
-//*FILE VERSION:    0.70
+//*FILE VERSION:    0.70.1
 //*FILE AUTHOR:     The Eichen Group
 //*CONTRIBUTORS:    Chimaroke Okwara
-//*LAST MODIFIED:   Tuesday, 13 April 2021 09:16
+//*LAST MODIFIED:   Thursday, 15 April 2021 12:05
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 #include <time.h>
 #include <stdlib.h>
