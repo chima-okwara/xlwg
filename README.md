@@ -23,7 +23,7 @@ __MEMBER METHODS:__
   - [ ] generateWord()   =>  Generates a random x-letter word.
 
 
-  - [ ] verifyWord()     =>  Verifies whether the generated word exists. Flags the generated word as an existent word.
+  - [x] verifyWord()     =>  Verifies whether the generated word exists. Flags the generated word as an existent word.
 
 
-  - [ ] storeWord()      =>  Stores the word in word bin container.
+  - [x] storeWord()      =>  Stores the word in word bin container.

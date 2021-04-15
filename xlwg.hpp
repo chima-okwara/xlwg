@@ -1,12 +1,20 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//*FILE NAME:       xlwg.cpp
+//*FILE DESC:       Header file for xlwg library.
+//*FILE VERSION:    0.70
+//*FILE AUTHOR:     The Eichen Group
+//*CONTRIBUTORS:    Chimaroke Okwara
+//*LAST MODIFIED:   Tuesday, 13 April 2021 09:16
+////////////////////////////////////////////////////////////////////////////////////////////////////
 #ifndef GENERATOR_HPP
 #define GENERATOR_HPP
-#include <vector>
 #include <stdlib.h>
 #include "xlwgDefinitions.hpp"
 
 
 
 #define GENERATOR_HPP
+#define BINLENGTH 100
 
 class Generator
 {
@@ -14,20 +22,19 @@ private:
   const int8_t letterCount;
   const static char *const alphabets;
   const static char vowels[7];
-  const char *word;                     //TODO: Reimplement using a smart pointer or a vector container.
+  char *word;
   bool wordExists {false};
 
 
   int correctWordCount;
-  std::vector<char*> wordBin;
+  char *wordBin[BINLENGTH];
 
-
-  char *generateLetter();
+  char generateLetter() const;
   bool checkVowel() const;
 
 public:
   Generator(const uint8_t &xLetters);
-  const char *const getAlphabet(uint8_t index) const { return &(alphabets[index]); }
+  char getAlphabet(uint8_t index) const { return (alphabets[index]); }
   void generateWord();
   void verifyWord(bool state);
   void storeWord();
