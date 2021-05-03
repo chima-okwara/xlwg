@@ -22,27 +22,29 @@ private:
   const int8_t letterCount;
   const static char *const alphabets;
   const static char vowels[7];
-  char *word;
+  char *word { };
   bool wordExists {false};
+  size_t correctWordCount {0};
 
 
-  int correctWordCount;
-  char *wordBin[BINLENGTH];
+  char *wordBin[BINLENGTH] { };
 
   char generateLetter() const;
   bool checkVowel() const;
 
 public:
   Generator(const uint8_t &xLetters);
+  ~Generator();
   char getAlphabet(uint8_t index) const { return (alphabets[index]); }
   void generateWord();
   void verifyWord(bool state);
   void storeWord();
+  const size_t &getCorrectWordCount(void) const { return (correctWordCount); }
 
 
   const char *getWord() const { return (word); }
 
-  const char *getWord(uint8_t index) const { return wordBin[index]; }
+  const char *getWord(size_t &index) const { return wordBin[index]; }
 };
 
 

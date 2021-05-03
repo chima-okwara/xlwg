@@ -12,13 +12,22 @@
 #include "xlwgDefinitions.hpp"
 #include "xlwg.hpp"
 
+
 const char *const Generator:: alphabets = "aeiouybcdfghjklmnpqrstvwxz";
 const char Generator::vowels[7] = {A, E, I, O, U, Y ,'\0'};
 bool wordExists = false;
 
+
 Generator::Generator(const uint8_t &xLetters) :letterCount(xLetters+1)
 {
+  word = new char[letterCount];
+  auto seed = time(nullptr);
+  srand(seed++);
+}
 
+Generator::~Generator()
+{
+  delete[] word;
 }
 
 bool Generator::checkVowel() const//Checks for vowel in word, returns false if none.
@@ -29,10 +38,7 @@ bool Generator::checkVowel() const//Checks for vowel in word, returns false if n
 
 char Generator::generateLetter(void) const //Generates a single letter from the alphabet
 {
-  auto seed = time(nullptr);
-  srand(seed++);
   uint8_t x = rand()%26+1;
-  xlwg::delay(1);
   return (getAlphabet(x));
 }
 
@@ -40,16 +46,17 @@ void Generator::generateWord(void)
 {
   do
   {
-    for (int8_t i = 0; i<(letterCount); ++i)
-      *(word+i) = generateLetter();
+    for (int8_t i = 0; i<(letterCount-1); ++i)
+      word[i] = generateLetter();
 
-    word[letterCount-1] = '\0';
+    word[letterCount] = '\0';
   } while(!checkVowel());
 }
 
 
 
-void Generator::storeWord()
+void Generator::storeWord()           //TODO: Adjust method to store words. Currently stores only\
+                                      //    last words
 {
   if(wordExists)
   {
