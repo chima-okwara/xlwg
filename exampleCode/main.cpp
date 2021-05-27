@@ -2,27 +2,26 @@
 ****This is an example program for the xlwg word generator library.
 ****It should come included as an optional part of the above-mentioned project.
 ****Author: Chimaroke Roland Okwara
-****Contributor(s): -The Eichen Group
-                 -Other
-****Copyright (c) 2021, The Eichen Group.
+****Copyright (c) 2021 - present, The Eichen Group.
 ****License:    Academic Free License v3.1
-****Last modified: Thursday, 1 April 2021 13:50.
+****Last modified: Monday, 3 May 2021 10:27
 *************************************************************************************************/
 
 
 #include <iostream>
 #include "../xlwg.hpp"
+
 using namespace std;
 
 int main()
 {
-  Generator gen(5);    //Creates an object to generate three-letter words.
+  Generator word(5);    //Creates an object to generate three-letter words.
   uchar ans, again;
 
   do
   {
-    gen.generateWord();
-    cout<<endl<<gen.getWord()<<endl;
+    word.generateWord();
+    cout<<endl<<word.getWord()<<endl;
     cout<<"Does the word exist?\nY/N\n";
     cin>>ans;
     ans = toupper(ans);
@@ -32,8 +31,7 @@ int main()
     {
       case 'Y':
       {
-        gen.verifyWord(1);
-        gen.storeWord();
+        word.storeWord();
         cout<<"Word Stored"<<endl;
         break;
       }
@@ -55,12 +53,16 @@ int main()
 
   if(ans == 'Y')
   {
-    if(!gen.getCorrectWordCount())
-      cout<<"\nThere are no correct words saved.\n";
-    cout<<"\nHere are the correct words: \n";
-    for(size_t i = 0; i<gen.getCorrectWordCount()+1; ++i)
+    if(!word.getCorrectWordCount())
     {
-      cout<<gen.getWord(i)<<endl;
+      cout<<"\nThere are no correct words saved.\n";
+      exit(0);
+    }
+
+    cout<<"\nHere are the correct words: \n";
+    for(size_t i = 1; i<=word.getCorrectWordCount(); ++i)
+    {
+      cout<<word.getWord(i)<<endl;
     }
   }
 

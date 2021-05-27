@@ -4,10 +4,11 @@
 //*FILE VERSION:    0.70.1
 //*FILE AUTHOR:     The Eichen Group
 //*CONTRIBUTORS:    Chimaroke Okwara
-//*LAST MODIFIED:   Thursday, 15 April 2021 12:05
+//*LAST MODIFIED:   Monday, 3 May 2021 10:27
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-#include <time.h>
 #include <stdlib.h>
+#include <stdint.h>
+#include <time.h>
 #include <string.h>
 #include "xlwgDefinitions.hpp"
 #include "xlwg.hpp"
@@ -18,9 +19,8 @@ const char Generator::vowels[7] = {A, E, I, O, U, Y ,'\0'};
 bool wordExists = false;
 
 
-Generator::Generator(const uint8_t &xLetters) :letterCount(xLetters+1)
+Generator::Generator(const uint8_t &xLetters) :wordArraySize(xLetters+1), word(new char[wordArraySize])
 {
-  word = new char[letterCount];
   auto seed = time(nullptr);
   srand(seed++);
 }
@@ -30,7 +30,7 @@ Generator::~Generator()
   delete[] word;
 }
 
-bool Generator::checkVowel() const//Checks for vowel in word, returns false if none.
+bool Generator::checkVowel() const        //Checks for vowel in word, returns false if none.
 {
   auto status = (strpbrk(word, vowels) != NULL) ? (true) : (false);
   return (status);
@@ -46,29 +46,21 @@ void Generator::generateWord(void)
 {
   do
   {
-    for (int8_t i = 0; i<(letterCount-1); ++i)
+    for (int8_t i = 0; i<(wordArraySize-1); ++i)
       word[i] = generateLetter();
 
-    word[letterCount] = '\0';
+    word[wordArraySize-1] = '\0';
   } while(!checkVowel());
 }
 
 
-
-void Generator::storeWord()           //TODO: Adjust method to store words. Currently stores only\
-                                      //    last words
+void Generator::storeWord()
 {
-  if(wordExists)
-  {
-    wordBin[correctWordCount] = word;
+    char temp[wordArraySize] { };
+    strcpy(temp, word);
+    strcpy(wordBin[correctWordCount], temp);
+    // wordBin[correctWordCount] = word;
     ++correctWordCount;
-  }
-}
-
-
-void Generator::verifyWord(bool state)
-{
-  wordExists = ( (state == true) ? true : false );
 }
 
 
@@ -76,10 +68,4 @@ void xlwg::delay(const ulong &sec)
 {
     time_t wait = time(nullptr) + sec;
     while (time(nullptr) < wait);
-}
-
-
-void xlwg::mdelay(const ulong &msec)    //TODO: Implement using a microsecond function from time.h
-{
-
 }

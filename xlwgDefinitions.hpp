@@ -4,7 +4,7 @@
 //*FILE VERSION:    0.70
 //*FILE AUTHOR:     The Eichen Group
 //*CONTRIBUTORS:    Chimaroke Okwara
-//*LAST MODIFIED:   Thursday, 15 April 2021 12:06
+//*LAST MODIFIED:   Monday, 3 May 2021 10:27
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 #ifndef GEN_DEFS
 #define GEN_DEFS
@@ -19,7 +19,6 @@
     #define U alphabets[4]
     #define Y alphabets[5]
 
-
 //Types:
     using int8_t = signed char;
     using uint = unsigned int;
@@ -32,7 +31,7 @@
 namespace xlwg
 {
   void delay(const ulong &sec);   //Delay for sec seconds
-  void mdelay(const ulong &msec);  //Delay for msec microseconds
+  void delay_ms(const ulong &msec);
 }
 
 

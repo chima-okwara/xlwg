@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/chima/Documents/Projects/codeProjects/cxxLibs/xlwg/build/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp
+
+/home/chima/Documents/Projects/codeProjects/cxxLibs/xlwg/exampleCode/main.cpp
+iostream
+-
+../xlwg.hpp
+/home/chima/Documents/Projects/codeProjects/cxxLibs/xlwg/xlwg.hpp
+
+/home/chima/Documents/Projects/codeProjects/cxxLibs/xlwg/xlwg.cpp
+stdlib.h
+-
+stdint.h
+-
+time.h
+-
+string.h
+-
+xlwgDefinitions.hpp
+/home/chima/Documents/Projects/codeProjects/cxxLibs/xlwg/xlwgDefinitions.hpp
+xlwg.hpp
+/home/chima/Documents/Projects/codeProjects/cxxLibs/xlwg/xlwg.hpp
+
+/home/chima/Documents/Projects/codeProjects/cxxLibs/xlwg/xlwg.hpp
+stdint.h
+-
+string.h
+-
+xlwgDefinitions.hpp
+/home/chima/Documents/Projects/codeProjects/cxxLibs/xlwg/xlwgDefinitions.hpp
+
+/home/chima/Documents/Projects/codeProjects/cxxLibs/xlwg/xlwgDefinitions.hpp
+time.h
+-
+
