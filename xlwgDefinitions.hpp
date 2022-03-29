@@ -31,7 +31,6 @@
 namespace xlwg
 {
   void delay(const ulong &sec);   //Delay for sec seconds
-  void delay_ms(const ulong &msec);
 }
 
 

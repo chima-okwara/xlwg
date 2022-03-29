@@ -20,31 +20,33 @@
 class Generator
 {
 private:
-  const int8_t wordArraySize;
+  //Variables:
+  const uint8_t wordArraySize;
   const static char *const alphabets;
   const static char vowels[7];
-  char *word {nullptr};
-  bool wordExists {false};
-  size_t correctWordCount {0};
-
-
+  char *word { };
+  bool wordExists { };
+  size_t correctWordCount { };
   char *wordBin[BINLENGTH] { };
 
+  //Methods:
+  inline bool checkVowel() const;
   char generateLetter() const;
-  bool checkVowel() const;
+  char getAlphabet(const uint8_t &index) const { return (alphabets[index]); }
 
 public:
+  //Constructor(s) and Destructor(s):
   Generator(const uint8_t &xLetters);
+  Generator() = default;
   ~Generator();
-  char getAlphabet(uint8_t index) const { return (alphabets[index]); }
+
   void generateWord();
   void storeWord();
-  const size_t &getCorrectWordCount(void) const { return (correctWordCount); }
 
-
-  const char *getWord() const { return (word); }
-
-  const char *getWord(const size_t &index) const { return wordBin[index-1]; }
+  //Accessor Mathods:
+  size_t getCorrectWordCount(void) const { return (correctWordCount); }
+  char *getWord() const { return (word); }
+  char *getWord(const size_t &index) const { return wordBin[index]; }
 };
 
 

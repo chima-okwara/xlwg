@@ -17,13 +17,13 @@ A library to create objects that generate random x-letter words, where 'x' is a 
 ***
 __MEMBER METHODS:__
 
-  - [x] Generator(int x) =>  Creates an object that can generate words of x letters.
+  - [x] `Generator(int x)` =>  Creates an object that can generate words of x letters.
 
 
-  - [ ] generateWord()   =>  Generates a random x-letter word.
+  - [x] `generateWord()`   =>  Generates a random x-letter word.
 
 
-  - [x] verifyWord()     =>  Verifies whether the generated word exists. Flags the generated word as an existent word.
+  - [x] `verifyWord()`     =>  Verifies whether the generated word exists. Flags the generated word as an existent word.
 
 
-  - [x] storeWord()      =>  Stores the word in word bin container.
+  - [x] `storeWord()`      =>  Stores the word in word bin container.
