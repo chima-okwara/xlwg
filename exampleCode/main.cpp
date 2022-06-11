@@ -4,7 +4,7 @@
 ****Author: Chimaroke Roland Okwara
 ****Copyright (c) 2021 - present, The Eichen Group.
 ****License:    Academic Free License v3.1
-****Last modified: Monday, 3 May 2021 10:27
+****Last modified: Saturday, 11 June 2022 15:47
 *************************************************************************************************/
 
 
@@ -15,8 +15,14 @@ using namespace std;
 
 int main()
 {
-  Generator word(5);    //Creates an object to generate three-letter words.
+  // Generator word(5);    //Creates an object to generate three-letter words.
   uchar ans, again;
+  int letters = 0;
+
+  cout<<"How many letter words do you want to generate?\n";
+  cin>>letters;
+
+  Generator word {letters};
 
   do
   {
