@@ -60,7 +60,7 @@ int main()
     }
 
     cout<<"\nHere are the correct words: \n";
-    for(size_t i = 0; i<=word.getCorrectWordCount(); ++i)
+    for(size_t i = 0; i<word.getCorrectWordCount(); ++i)
     {
       cout<<word.getWord(i)<<endl;
     }

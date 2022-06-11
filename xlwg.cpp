@@ -19,8 +19,14 @@ const char Generator::vowels[7] = {A, E, I, O, U, Y ,'\0'};
 bool wordExists = false;
 
 
-Generator::Generator(const uint8_t &xLetters) :wordArraySize(xLetters+1), word(new char[wordArraySize])
+Generator::Generator(const uint8_t &xLetters) :wordArraySize(xLetters+1)
 {
+  //Allocate memory for the word and the wordBin:
+  word = new char[wordArraySize];
+  for(int i = 0; i<BINLENGTH; ++i)
+    wordBin[i] = new char[wordArraySize];
+
+  //initialise the random number generator seed:
   auto seed = time(nullptr);
   srand(seed++);
 }
@@ -28,7 +34,8 @@ Generator::Generator(const uint8_t &xLetters) :wordArraySize(xLetters+1), word(n
 Generator::~Generator()
 {
   delete[] word;
-  // delete[] wordBin;
+  for(int i = 0; i<BINLENGTH; ++i)
+    delete[] wordBin[i];
 }
 
 inline bool Generator::checkVowel() const        //Checks for vowel in word, returns false if none.
@@ -59,7 +66,6 @@ void Generator::generateWord(void)
 void Generator::storeWord()
 {
   strcpy(wordBin[correctWordCount], word);
-  // strcpy(word, wordBin[correctWordCount]);
   ++correctWordCount;
 }
 

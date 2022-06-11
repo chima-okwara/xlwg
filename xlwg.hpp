@@ -8,14 +8,11 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 #ifndef GENERATOR_HPP
 #define GENERATOR_HPP
+#define BINLENGTH 100
+
 #include <stdint.h>
 #include <string.h>
 #include "xlwgDefinitions.hpp"
-
-
-
-#define GENERATOR_HPP
-#define BINLENGTH 100
 
 class Generator
 {
