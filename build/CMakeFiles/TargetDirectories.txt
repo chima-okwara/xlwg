@@ -1,6 +1,0 @@
-/home/chima/Documents/Projects/codeProjects/cxxLibs/xlwg/build/CMakeFiles/rebuild_cache.dir
-/home/chima/Documents/Projects/codeProjects/cxxLibs/xlwg/build/CMakeFiles/xlwgLib.dir
-/home/chima/Documents/Projects/codeProjects/cxxLibs/xlwg/build/CMakeFiles/edit_cache.dir
-/home/chima/Documents/Projects/codeProjects/cxxLibs/xlwg/build/exampleCode/CMakeFiles/rebuild_cache.dir
-/home/chima/Documents/Projects/codeProjects/cxxLibs/xlwg/build/exampleCode/CMakeFiles/example.dir
-/home/chima/Documents/Projects/codeProjects/cxxLibs/xlwg/build/exampleCode/CMakeFiles/edit_cache.dir
