@@ -41,7 +41,7 @@ public:
   void storeWord();
 
   //Accessor Mathods:
-  size_t getCorrectWordCount(void) const { return (correctWordCount); }
+  const size_t &getCorrectWordCount(void) const { return (correctWordCount); }
   char *getWord() const { return (word); }
   char *getWord(const size_t &index) const { return wordBin[index]; }
 };
